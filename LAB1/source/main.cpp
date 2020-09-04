@@ -9,7 +9,7 @@ void setData(vector<vector<int>> &data_set, int N, int dimensions) {
 	data_set.resize(N);
 	for (auto &sdst : data_set) {
 		for (int i = 0; i < dimensions; i++) {
-			sdst.push_back(rand() % 1000);
+			sdst.push_back(rand() % 1000 + 500);
 		}
 	}
 }

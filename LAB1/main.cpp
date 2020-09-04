@@ -22,7 +22,7 @@ double euclideanDistance(vector<int> &sds1, vector<int> &sds2) {
 	return sqrt(distance);
 }
 
-double course_dimensionalityTimer(vector<vector<int>> &data_set) {
+double curse_dimensionalityTimer(vector<vector<int>> &data_set) {
 	unsigned t0, t1;
 
 	t0 = clock();
@@ -41,18 +41,18 @@ double course_dimensionalityTimer(vector<vector<int>> &data_set) {
 int main() {
 	srand(time(NULL));
 	vector<vector<vector<int>>> VEC;//vec10k, vec15k, vec20k, vec25k
-	int tamaños[4] = { 10000,15000,20000,25000 };
+	int tamaÃ±os[4] = { 10000,15000,20000,25000 };
 	int dimensiones[7] = { 4,6,8,10,12,18,20 };
 	for (int tam = 0; tam < 4; tam++) {
 		for (int dim = 0; dim < 7; dim++) {
 			vector<vector<int>> DS;
-			setData(DS, tamaños[tam], dimensiones[dim]);
+			setData(DS, tamaÃ±os[tam], dimensiones[dim]);
 			VEC.push_back(DS);
 		}
 	}
 	cout << "Vectores creados!\n";
 	for (auto &svec : VEC) {
-		cout << "Tiempo en ms (" << int(svec.size()) << "," << int(svec[0].size()) << "): " << course_dimensionalityTimer(svec) << endl;
+		cout << "Tiempo en ms (" << int(svec.size()) << "," << int(svec[0].size()) << "): " << curse_dimensionalityTimer(svec) << endl;
 	}
 	system("pause");
 	return 0;

@@ -142,7 +142,7 @@ private:
         child = NULL;
       }
       pp->color = col2ver;
-      recall(pp->parent);
+      recall(pp->parent,col2ver);
     }
   }
   RocTree* children[8] = {NULL};

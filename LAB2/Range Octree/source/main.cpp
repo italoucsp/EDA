@@ -206,8 +206,9 @@ void setPoints(string path, RocTree<R> &o_tree, vector<Point> &data_set){
     PRINT("ERROR: file can not be openned");
     return;
   }
-  minBound = minBound - Point(1, 1, 1);
-  maxBound = maxBound + Point(1, 1, 1);
+  Point p111 = Point(1,1,1);
+  minBound = minBound - p111;
+  maxBound = maxBound + p111;
   PRINTC("=> MIN BOUND: "); minBound.print();
   PRINTC("=> MAX BOUND: "); maxBound.print();
   o_tree = RocTree<R>(minBound, maxBound - minBound);

@@ -204,8 +204,9 @@ void setPoints(string path, OcTree &o_tree, vector<Point> &data_set){
   else {
     PRINT("ERROR: file can not be openned");
   }
-  minBound = minBound - Point(1, 1, 1);
-  maxBound = maxBound + Point(1, 1, 1);
+  Point p111 = Point(1,1,1);
+  minBound = minBound - p111;
+  maxBound = maxBound + p111;
   PRINTC("=> MIN BOUND: "); minBound.print();
   PRINTC("=> MAX BOUND: "); maxBound.print();
   o_tree = OcTree(minBound, maxBound - minBound);
@@ -232,7 +233,7 @@ int main(){
   int random_ind = rand() % int(data.size());
 
   //sfind = busqueda simple que solo necesita el punto a buscar en el octree.
-  //find = busqueda exclusiva solo para realizar inserciones y borrados en el octree. Si nada m·s se quiere buscar un elemento, use sfind.
+  //find = busqueda exclusiva solo para realizar inserciones y borrados en el octree. Si nada m√°s se quiere buscar un elemento, use sfind.
 
   //TEST
   PRINT(oct.sfind(data[random_ind]));//1 busqueda de un dato random que debe encontrarse en el octree.

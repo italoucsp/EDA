@@ -77,16 +77,17 @@ struct RocTree{
         pp->children[7] = new RocTree(pp->boundfp + pp->chSX + pp->chSY + pp->chSZ, pp->chSX + pp->chSY + pp->chSZ, pp);
         FOR_EACH_CHILD(child,pp){
           if(child->isInside(newpoint)){
+            ++OCTANT_LEVEL;
             pp = child;
             break;
           }
         }
-        ++OCTANT_LEVEL;
       }
       Point *newpointptr = new Point(newpoint.x,newpoint.y,newpoint.z);
       pp->content.push_back(newpointptr);
       pp->color = BLACK;
       recall(pp->parent);
+      return true;
     }
     return false;
   }
@@ -99,6 +100,7 @@ struct RocTree{
       delete temp;
       temp = NULL;
       recall(pp->parent, WHITE);
+      return true;
     }
     return false;
   }
